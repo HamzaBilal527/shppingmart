@@ -13,7 +13,7 @@ export const addNewAddress = createAsyncThunk(
   "/addresses/addNewAddress",
   async (formData) => {
     const response = await axios.post(
-      "htttps://shoppingmartserver.up.railway.app/api/shop/address/add",
+      "https://shoppingmartserver.up.railway.app/api/shop/address/add",
       formData
     );
 
@@ -25,7 +25,7 @@ export const fetchAllAddresses = createAsyncThunk(
   "/addresses/fetchAllAddresses",
   async (userId) => {
     const response = await axios.get(
-      `htttps://shoppingmartserver.up.railway.app/api/shop/address/get/${userId}`
+      `https://shoppingmartserver.up.railway.app/api/shop/address/get/${userId}`
     );
 
     return response.data;
@@ -36,7 +36,7 @@ export const editaAddress = createAsyncThunk(
   "/addresses/editaAddress",
   async ({ userId, addressId, formData }) => {
     const response = await axios.put(
-      `htttps://shoppingmartserver.up.railway.app/api/shop/address/update/${userId}/${addressId}`,
+      `https://shoppingmartserver.up.railway.app/api/shop/address/update/${userId}/${addressId}`,
       formData
     );
 
@@ -48,7 +48,7 @@ export const deleteAddress = createAsyncThunk(
   "/addresses/deleteAddress",
   async ({ userId, addressId }) => {
     const response = await axios.delete(
-      `htttps://shoppingmartserver.up.railway.app/api/shop/address/delete/${userId}/${addressId}`
+      `https://shoppingmartserver.up.railway.app/api/shop/address/delete/${userId}/${addressId}`
     );
 
     return response.data;

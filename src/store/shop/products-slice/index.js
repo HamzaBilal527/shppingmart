@@ -24,7 +24,7 @@ export const fetchAllFilteredProducts = createAsyncThunk(
     });
 
     const result = await axios.get(
-      `htttps://shoppingmartserver.up.railway.app/api/shop/products/get?${query}`
+      `https://shoppingmartserver.up.railway.app/api/shop/products/get?${query}`
     );
 
     console.log(result);
@@ -37,7 +37,7 @@ export const fetchProductDetails = createAsyncThunk(
   "/products/fetchProductDetails",
   async (id) => {
     const result = await axios.get(
-      `htttps://shoppingmartserver.up.railway.app/api/shop/products/get/${id}`
+      `https://shoppingmartserver.up.railway.app/api/shop/products/get/${id}`
     );
 
     return result?.data;

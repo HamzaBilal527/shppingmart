@@ -13,7 +13,7 @@ export const addReview = createAsyncThunk(
   "/order/addReview",
   async (formdata) => {
     const response = await axios.post(
-      `htttps://shoppingmartserver.up.railway.app/api/shop/review/add`,
+      `https://shoppingmartserver.up.railway.app/api/shop/review/add`,
       formdata
     );
 
@@ -25,7 +25,7 @@ export const getReviews = createAsyncThunk(
   "/order/getReviews",
   async (id) => {
     const response = await axios.get(
-      `htttps://shoppingmartserver.up.railway.app/api/shop/review/${id}`
+      `https://shoppingmartserver.up.railway.app/api/shop/review/${id}`
     );
 
     return response.data;
