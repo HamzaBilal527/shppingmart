@@ -1,9 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/shop/paypal-return",
-      "destination": "/shop/payment-success"
-    },
-    { "source": "/(.*)", "destination": "/shop/home" }
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }
