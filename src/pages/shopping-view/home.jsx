@@ -71,7 +71,6 @@ function ShoppingHome() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { toast } = useToast();
-  sessionStorage.removeItem("currentOrderId");
 
   function handleNavigateToListingPage(
     getCurrentItem,
