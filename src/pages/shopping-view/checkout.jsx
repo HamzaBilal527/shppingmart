@@ -9,18 +9,28 @@ import { Navigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
 
 function ShoppingCheckout() {
-  const { cartItems } = useSelector((state) => state.shopCart);
+  const { cartItems } = useSelector(
+    (state) => state.shopCart
+  );
   const { user } = useSelector((state) => state.auth);
-  const { approvalURL } = useSelector((state) => state.shopOrder);
-  const [currentSelectedAddress, setCurrentSelectedAddress] = useState(null);
-  const [isPaymentStart, setIsPaymemntStart] = useState(false);
+  const { approvalURL } = useSelector(
+    (state) => state.shopOrder
+  );
+  const [
+    currentSelectedAddress,
+    setCurrentSelectedAddress,
+  ] = useState(null);
+  const [isPaymentStart, setIsPaymemntStart] =
+    useState(false);
   const dispatch = useDispatch();
   const { toast } = useToast();
 
   console.log(currentSelectedAddress, "cartItems");
 
   const totalCartAmount =
-    cartItems && cartItems.items && cartItems.items.length > 0
+    cartItems &&
+    cartItems.items &&
+    cartItems.items.length > 0
       ? cartItems.items.reduce(
           (sum, currentItem) =>
             sum +
@@ -35,7 +45,8 @@ function ShoppingCheckout() {
   function handleInitiatePaypalPayment() {
     if (cartItems.length === 0) {
       toast({
-        title: "Your cart is empty. Please add items to proceed",
+        title:
+          "Your cart is empty. Please add items to proceed",
         variant: "destructive",
       });
 
@@ -98,15 +109,22 @@ function ShoppingCheckout() {
   return (
     <div className="flex flex-col">
       <div className="relative h-[300px] w-full overflow-hidden">
-        <img src={img} className="h-full w-full object-cover object-center" />
+        <img
+          src={img}
+          className="h-full w-full object-cover object-center"
+        />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 p-5">
         <Address
           selectedId={currentSelectedAddress}
-          setCurrentSelectedAddress={setCurrentSelectedAddress}
+          setCurrentSelectedAddress={
+            setCurrentSelectedAddress
+          }
         />
         <div className="flex flex-col gap-4">
-          {cartItems && cartItems.items && cartItems.items.length > 0
+          {cartItems &&
+          cartItems.items &&
+          cartItems.items.length > 0
             ? cartItems.items.map((item) => (
                 <UserCartItemsContent cartItem={item} />
               ))
@@ -114,11 +132,16 @@ function ShoppingCheckout() {
           <div className="mt-8 space-y-4">
             <div className="flex justify-between">
               <span className="font-bold">Total</span>
-              <span className="font-bold">${totalCartAmount}</span>
+              <span className="font-bold">
+                ${totalCartAmount}
+              </span>
             </div>
           </div>
           <div className="mt-4 w-full">
-            <Button onClick={handleInitiatePaypalPayment} className="w-full">
+            <Button
+              onClick={handleInitiatePaypalPayment}
+              className="w-full"
+              disabled={true}>
               {isPaymentStart
                 ? "Processing Paypal Payment..."
                 : "Checkout with Paypal"}
