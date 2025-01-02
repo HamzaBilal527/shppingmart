@@ -154,8 +154,7 @@ function ShoppingCheckout() {
             </Button> */}
             <Button
               onClick={confirmTheOrder}
-              className="w-full"
-              disabled={true}>
+              className="w-full">
               Confirm the Order!
             </Button>
           </div>
