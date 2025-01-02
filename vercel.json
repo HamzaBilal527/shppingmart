@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/shop/paypal-return",
-      "destination": "https://www.shoppingmart.biz/shop/paypal-return",
-      "permanent": false
-    }
-  ]
-}
