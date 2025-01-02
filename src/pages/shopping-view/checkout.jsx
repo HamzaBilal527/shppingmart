@@ -102,6 +102,13 @@ function ShoppingCheckout() {
     });
   }
 
+  function confirmTheOrder() {
+    sessionStorage.removeItem("currentOrderId");
+    window.location.href = "/shop/payment-success";
+
+    return;
+  }
+
   if (approvalURL) {
     window.location.href = approvalURL;
   }
@@ -138,13 +145,18 @@ function ShoppingCheckout() {
             </div>
           </div>
           <div className="mt-4 w-full">
-            <Button
+            {/* <Button
               onClick={handleInitiatePaypalPayment}
               className="w-full"
-              disabled={true}>
               {isPaymentStart
                 ? "Processing Paypal Payment..."
                 : "Checkout with Paypal"}
+            </Button> */}
+            <Button
+              onClick={confirmTheOrder}
+              className="w-full"
+              disabled={true}>
+              Confirm the Order!
             </Button>
           </div>
         </div>
