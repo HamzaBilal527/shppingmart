@@ -13,7 +13,7 @@ function PaymentSuccessPage() {
     <Card className="p-10">
       <CardHeader className="p-0">
         <CardTitle className="text-4xl">
-          Order is Confirmed
+          Payment is successfull!
         </CardTitle>
       </CardHeader>
       <Button

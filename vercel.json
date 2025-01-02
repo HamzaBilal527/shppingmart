@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://www.shoppingmart.biz/shop/home",
+      "permanent": true
+    }
+  ]
+}
